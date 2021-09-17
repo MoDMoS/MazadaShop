@@ -37,7 +37,7 @@ if(isset($_POST['loginShop-btn'])){
             $_SESSION['alert-class'] = "alert-success";
             header('location: index.php');
             exit();
-        }else{
+        }else{   
             $errors['login fail'] = "อีเมล์หรือรหัสผ่านผิดพลาด กรุณากรอกใหม่";
         }
     }

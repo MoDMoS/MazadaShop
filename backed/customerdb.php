@@ -36,11 +36,16 @@ if(isset($_POST['loginCus-btn'])){
             $_SESSION['PostalCode'] = $user['PostalCode'];
             $_SESSION['Phone'] = $user['Phone'];
             //message
+            
             $_SESSION['message'] = "You are now logged in!";
             $_SESSION['alert-class'] = "alert-success";
+
             header('location: index.php');
             exit();
         }else{
+            echo "<script>";
+            echo "alert(\" user หรือ  password ไม่ถูกต้อง\");";           
+            echo "</script>";
             $errors['login fail'] = "อีเมล์หรือรหัสผ่านผิดพลาด กรุณากรอกใหม่";
         }
     }

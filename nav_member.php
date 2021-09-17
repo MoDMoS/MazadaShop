@@ -1,13 +1,14 @@
-<body> 
-   <!-- wpf loader Two -->
-    <div id="wpf-loader-two">          
-      <div class="wpf-loader-two-inner">
-        <span>Loading</span>
-      </div>
-    </div> 
-    <!-- / wpf loader Two -->       
+
+<body>
+  <!-- wpf loader Two -->
+  <div id="wpf-loader-two">
+    <div class="wpf-loader-two-inner">
+      <span>Loading</span>
+    </div>
+  </div>
+  <!-- / wpf loader Two -->
   <!-- SCROLL TOP BUTTON -->
-    <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+  <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
 
 
@@ -63,8 +64,25 @@
                   <li class="hidden-xs"><a href="wishlist.php">Wishlist</a></li>
                   <li class="hidden-xs"><a href="cart.php">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.php">Checkout</a></li>
+                  
+
                   <li><a href="loginCus.php">Login</a></li>
                   <li><a href="loginShop.php">Shop login</a></li>
+
+                  <?php if(isset( $_SESSION['username'])){ ?>
+                    <!-- <li><a href="loginShop.php">Shop login</a></li>   
+                    <li class="nav-item"><a class="nav-link" href="loginCus.php">Login</a></li> -->
+                               
+                    <li class="dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">สวัสดีคุณ <?php echo  $_POST['username']; ?></a>
+                      <ul class="dropdown-menu">                   
+                        <li> <a href='cart.php?p_id=$row_pro[p_id]&act=add'>ตะกร้าสินค้า</a> </li>
+                        <li><a href="logout.php">ออกจากระบบ</a></li>
+                      </ul>
+                    </li>
+
+                  <?php } ?>
+
                 </ul>
               </div>
             </div>
@@ -91,7 +109,7 @@
                 <!-- <a href="index.php"><img src="img/logo.jpg" alt="logo img"></a> -->
               </div>
               <!-- / logo  -->
-               <!-- cart box -->
+              <!-- cart box -->
               <div class="aa-cartbox">
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
@@ -115,7 +133,7 @@
                         <p>1 x $250</p>
                       </div>
                       <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
+                    </li>
                     <li>
                       <span class="aa-cartbox-total-title">
                         Total
@@ -136,7 +154,7 @@
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
-              <!-- / search box -->             
+              <!-- / search box -->
             </div>
           </div>
         </div>
@@ -157,18 +175,18 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
-            </button>          
+            </button>
           </div>
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li><a href="index.php">Home</a></li>
               <li><a href="#">Men <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="#">Casual</a></li>
                   <li><a href="#">Sports</a></li>
                   <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>                                                
+                  <li><a href="#">Standard</a></li>
                   <li><a href="#">T-Shirts</a></li>
                   <li><a href="#">Shirts</a></li>
                   <li><a href="#">Jeans</a></li>
@@ -177,18 +195,18 @@
                     <ul class="dropdown-menu">
                       <li><a href="#">Sleep Wear</a></li>
                       <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>                                      
+                      <li><a href="#">Loafers</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="#">Women <span class="caret"></span></a>
-                <ul class="dropdown-menu">  
-                  <li><a href="#">Kurta & Kurti</a></li>                                                                
-                  <li><a href="#">Trousers</a></li>              
+                <ul class="dropdown-menu">
+                  <li><a href="#">Kurta & Kurti</a></li>
+                  <li><a href="#">Trousers</a></li>
                   <li><a href="#">Casual</a></li>
                   <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>                
+                  <li><a href="#">Formal</a></li>
                   <li><a href="#">Sarees</a></li>
                   <li><a href="#">Shoes</a></li>
                   <li><a href="#">And more.. <span class="caret"></span></a>
@@ -202,7 +220,7 @@
                           <li><a href="#">Earrings</a></li>
                           <li><a href="#">Jewellery Sets</a></li>
                           <li><a href="#">Lockets</a></li>
-                          <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>                       
+                          <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>
                           <li><a href="#">Jeans</a></li>
                           <li><a href="#">Polo T-Shirts</a></li>
                           <li><a href="#">SKirts</a></li>
@@ -215,21 +233,21 @@
                           <li><a href="#">Hand Bags</a></li>
                           <li><a href="#">Single Bags</a></li>
                           <li><a href="#">Travel Bags</a></li>
-                          <li><a href="#">Wallets & Belts</a></li>                        
+                          <li><a href="#">Wallets & Belts</a></li>
                           <li><a href="#">Sunglases</a></li>
-                          <li><a href="#">Nail</a></li>                       
+                          <li><a href="#">Nail</a></li>
                         </ul>
-                      </li>                   
+                      </li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="#">Kids <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="#">Casual</a></li>
                   <li><a href="#">Sports</a></li>
                   <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>                                                
+                  <li><a href="#">Standard</a></li>
                   <li><a href="#">T-Shirts</a></li>
                   <li><a href="#">Shirts</a></li>
                   <li><a href="#">Jeans</a></li>
@@ -238,41 +256,42 @@
                     <ul class="dropdown-menu">
                       <li><a href="#">Sleep Wear</a></li>
                       <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>                                      
+                      <li><a href="#">Loafers</a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li><a href="#">Sports</a></li>
-             <li><a href="#">Digital <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+              <li><a href="#">Digital <span class="caret"></span></a>
+                <ul class="dropdown-menu">
                   <li><a href="#">Camera</a></li>
                   <li><a href="#">Mobile</a></li>
                   <li><a href="#">Tablet</a></li>
-                  <li><a href="#">Laptop</a></li>                                                
-                  <li><a href="#">Accesories</a></li>                
+                  <li><a href="#">Laptop</a></li>
+                  <li><a href="#">Accesories</a></li>
                 </ul>
               </li>
-              <li><a href="#">Furniture</a></li>            
+              <li><a href="#">Furniture</a></li>
               <li><a href="blog-archive.php">Blog <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="blog-archive.php">Blog Style 1</a></li>
                   <li><a href="blog-archive-2.php">Blog Style 2</a></li>
-                  <li><a href="blog-single.php">Blog Single</a></li>                
+                  <li><a href="blog-single.php">Blog Single</a></li>
                 </ul>
               </li>
               <li><a href="contact.php">Contact</a></li>
               <li><a href="#">Pages <span class="caret"></span></a>
-                <ul class="dropdown-menu">                
+                <ul class="dropdown-menu">
                   <li><a href="product.php">Shop Page</a></li>
-                  <li><a href="product-detail.php">Shop Single</a></li>                
-                  <li><a href="404.php">404 Page</a></li>                
+                  <li><a href="product-detail.php">Shop Single</a></li>
+                  <li><a href="404.php">404 Page</a></li>
                 </ul>
               </li>
             </ul>
-          </div><!--/.nav-collapse -->
+          </div>
+          <!--/.nav-collapse -->
         </div>
-      </div>       
+      </div>
     </div>
   </section>
   <!-- / menu -->

@@ -1,5 +1,6 @@
 <?php include('h.php'); ?>
-
+<?php include('backed/condb.php'); ?>
+<?php include('backed/customerdb.php'); ?>
 <body>
 <?php include('nav_member.php'); ?>
 
