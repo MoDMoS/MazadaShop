@@ -25,28 +25,30 @@ if(isset($_POST['loginCus-btn'])){
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
+        $userCount = $result->num_rows;
 
-        if($password===$user['Password']){
-            //login
-            $_SESSION['CustomerID'] = $user['CustomerID'];
-            $_SESSION['Name'] = $user['Name'];
-            $_SESSION['Password'] = $user['Password'];
-            $_SESSION['Email'] = $user['Email'];
-            $_SESSION['Address'] = $user['Address'];
-            $_SESSION['PostalCode'] = $user['PostalCode'];
-            $_SESSION['Phone'] = $user['Phone'];
-            //message
-            
-            $_SESSION['message'] = "You are now logged in!";
-            $_SESSION['alert-class'] = "alert-success";
+        if($userCount > 0){
+            if($password===$user['Password']){
+                //login
+                $_SESSION['CustomerID'] = $user['CustomerID'];
+                $_SESSION['Name'] = $user['Name'];
+                $_SESSION['Password'] = $user['Password'];
+                $_SESSION['Email'] = $user['Email'];
+                $_SESSION['Address'] = $user['Address'];
+                $_SESSION['PostalCode'] = $user['PostalCode'];
+                $_SESSION['Phone'] = $user['Phone'];
+                //message
+                
+                $_SESSION['message'] = "You are now logged in!";
+                $_SESSION['alert-class'] = "alert-success";
 
-            header('location: index.php');
-            exit();
+                header('location: index.php');
+                exit();
+            }else{
+                $errors['login fail'] = "รหัสผ่านผิดพลาด กรุณากรอกใหม่";
+            }
         }else{
-            echo "<script>";
-            echo "alert(\" user หรือ  password ไม่ถูกต้อง\");";           
-            echo "</script>";
-            $errors['login fail'] = "อีเมล์หรือรหัสผ่านผิดพลาด กรุณากรอกใหม่";
+            $errors['login fail'] = "อีเมล์ผิดพลาด กรุณากรอกใหม่";
         }
     }
 }

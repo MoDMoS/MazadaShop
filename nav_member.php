@@ -64,25 +64,30 @@
                   <li class="hidden-xs"><a href="wishlist.php">Wishlist</a></li>
                   <li class="hidden-xs"><a href="cart.php">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.php">Checkout</a></li>
-                  
 
-                  <li><a href="loginCus.php">Login</a></li>
-                  <li><a href="loginShop.php">Shop login</a></li>
-
-                  <?php if(isset( $_SESSION['username'])){ ?>
+                  <?php if(isset($_SESSION['Name'])): ?>
                     <!-- <li><a href="loginShop.php">Shop login</a></li>   
                     <li class="nav-item"><a class="nav-link" href="loginCus.php">Login</a></li> -->
                                
                     <li class="dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">สวัสดีคุณ <?php echo  $_POST['username']; ?></a>
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">สวัสดีคุณ <?php echo  $_SESSION['Name']; ?></a>
                       <ul class="dropdown-menu">                   
                         <li> <a href='cart.php?p_id=$row_pro[p_id]&act=add'>ตะกร้าสินค้า</a> </li>
                         <li><a href="logout.php">ออกจากระบบ</a></li>
                       </ul>
                     </li>
-
-                  <?php } ?>
-
+                  <?php elseif(isset($_SESSION['OwName'])):?>
+                    <li class="dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">สวัสดีคุณ <?php echo  $_SESSION['OwName']; ?></a>
+                      <ul class="dropdown-menu">                   
+                        <li> <a href='cart.php?p_id=$row_pro[p_id]&act=add'>ตะกร้าสินค้า</a> </li>
+                        <li><a href="logout.php">ออกจากระบบ</a></li>
+                      </ul>
+                    </li>
+                  <?php else : ?>
+                    <li><a href="loginCus.php">Login</a></li>
+                    <li><a href="loginShop.php">Shop login</a></li>
+                  <?php endif; ?>
                 </ul>
               </div>
             </div>

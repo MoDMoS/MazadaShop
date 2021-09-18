@@ -1,5 +1,5 @@
 <?php
-  require_once 'backed/customerdb.php';
+  require_once 'backed/shopdb.php';
 ?>
 
 <?php include('h.php'); ?>
@@ -33,6 +33,13 @@
             <div class="aa-myaccount-login">
             <h4 align="center">Shop Login</h4>
               <form action="" method="post" class="aa-login-form">
+                <?php if(count($errors) > 0): ?>
+                    <div class="alert alert-danger">
+                        <?php foreach($errors as $error): ?>
+                            <li><?php echo $error ?></li>
+                        <?php endforeach ?>
+                    </div>
+                <?php endif; ?>
                 <label for="">Email<span>*</span></label>
                 <input type="text" name = "username" placeholder="Email">
                 <label for="">Password<span>*</span></label>
