@@ -25,20 +25,27 @@ if(isset($_POST['loginShop-btn'])){
         $stmt->execute();
         $result = $stmt->get_result();
         $user = $result->fetch_assoc();
+        $userCount = $result->num_rows;
 
-        if($password===$user['OwPassword']){
-            //login
-            $_SESSION['OwID'] = $user['OwID'];
-            $_SESSION['OwName'] = $user['OwName'];
-            $_SESSION['OwPassword'] = $user['OwPassword'];
-            $_SESSION['OwEmail'] = $user['OwEmail'];
-            //message
-            $_SESSION['message'] = "You are now logged in!";
-            $_SESSION['alert-class'] = "alert-success";
-            header('location: index.php');
-            exit();
-        }else{
-            $errors['login fail'] = "อีเมล์หรือรหัสผ่านผิดพลาด กรุณากรอกใหม่";
+        if($userCount > 0){
+            if($password===$user['OwPassword']){
+                //login
+                $_SESSION['OwID'] = $user['OwID'];
+                $_SESSION['OwName'] = $user['OwName'];
+                $_SESSION['OwPassword'] = $user['OwPassword'];
+                $_SESSION['OwEmail'] = $user['OwEmail'];
+                //message
+                $_SESSION['message'] = "You are now logged in!";
+                $_SESSION['alert-class'] = "alert-success";
+                header('location: s_index.php');
+                exit();
+            }
+            else{   
+                $errors['login fail'] = "รหัสผ่านผิดพลาด กรุณากรอกใหม่";
+            }
+        }
+        else{   
+            $errors['login fail'] = "อีเมล์ผิดพลาด กรุณากรอกใหม่";
         }
     }
 }
