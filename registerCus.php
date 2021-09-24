@@ -2,12 +2,18 @@
   require_once 'backed/customerdb.php';
 ?>
 <?php include('h.php'); ?>
+<<<<<<< HEAD
 <head><title>Register</title></head>
 
 
 <body>
 <?php include('nav_member.php'); ?> 
 
+=======
+
+<body>
+<?php include('nav_member.php'); ?> 
+>>>>>>> 3efea3b5bc350acf25cef6ee11362a914eec045f
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
     <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">

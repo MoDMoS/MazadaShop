@@ -37,7 +37,11 @@ if(isset($_POST['loginShop-btn'])){
                 //message
                 $_SESSION['message'] = "You are now logged in!";
                 $_SESSION['alert-class'] = "alert-success";
+<<<<<<< HEAD
                 header('location: s_index.php');
+=======
+                header('location: index.php');
+>>>>>>> 3efea3b5bc350acf25cef6ee11362a914eec045f
                 exit();
             }
             else{   
