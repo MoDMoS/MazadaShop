@@ -4,10 +4,8 @@
 ?>
 
 <?php include('h.php'); ?>
-<<<<<<< HEAD
+
 <head><title>Login</title></head>
-=======
->>>>>>> 3efea3b5bc350acf25cef6ee11362a914eec045f
 
 <body>
 <?php include('nav_member.php'); ?>
