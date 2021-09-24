@@ -2,14 +2,12 @@
   require_once 'backed/customerdb.php';
 ?>
 <?php include('h.php'); ?>
-<<<<<<< HEAD
-<head><title>Register</title></head>
 
+<head><title>Register</title></head>
 
 <body>
 <?php include('nav_member.php'); ?> 
 
-=======
 
 <body>
 <?php include('nav_member.php'); ?> 
