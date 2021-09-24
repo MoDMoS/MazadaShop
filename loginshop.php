@@ -3,11 +3,9 @@
 ?>
 
 <?php include('h.php'); ?>
-<<<<<<< HEAD
-<head><title>Login Shop</title></head>
-=======
 
->>>>>>> 3efea3b5bc350acf25cef6ee11362a914eec045f
+<head><title>Login Shop</title></head>
+
 <body>
 <?php include('nav_member.php'); ?>
  
