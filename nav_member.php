@@ -1,11 +1,10 @@
-
 <body>
   <!-- wpf loader Two -->
-  <div id="wpf-loader-two">
+  <!-- <div id="wpf-loader-two">
     <div class="wpf-loader-two-inner">
       <span>Loading</span>
     </div>
-  </div>
+  </div> -->
   <!-- / wpf loader Two -->
   <!-- SCROLL TOP BUTTON -->
   <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
@@ -22,71 +21,27 @@
             <div class="aa-header-top-area">
               <!-- start header top left -->
               <div class="aa-header-top-left">
-                <!-- start language -->
-                <div class="aa-language">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <img src="img/flag/english.jpg" alt="english flag">ENGLISH
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><img src="img/flag/french.jpg" alt="">FRENCH</a></li>
-                      <li><a href="#"><img src="img/flag/english.jpg" alt="">ENGLISH</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / language -->
-
-                <!-- start currency -->
-                <div class="aa-currency">
-                  <div class="dropdown">
-                    <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                      <i class="fa fa-usd"></i>USD
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                      <li><a href="#"><i class="fa fa-euro"></i>EURO</a></li>
-                      <li><a href="#"><i class="fa fa-jpy"></i>YEN</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- / currency -->
-                <!-- start cellphone -->
-                <div class="cellphone hidden-xs">
-                  <p><span class="fa fa-phone"></span>00-62-658-658</p>
-                </div>
-                <!-- / cellphone -->
               </div>
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.php">My Account</a></li>
-                  <li class="hidden-xs"><a href="wishlist.php">Wishlist</a></li>
+                  <!-- <li><a href="account.php">My Account</a></li>
+                  <li class="hidden-xs"><a href="wishlist.php">Wishlist</a></li> -->
                   <li class="hidden-xs"><a href="cart.php">My Cart</a></li>
                   <li class="hidden-xs"><a href="checkout.php">Checkout</a></li>
+                  <li><a href="cus_detail.php">Order details</a></li>
 
-                  <?php if(isset($_SESSION['Name'])): ?>
-                    <!-- <li><a href="loginShop.php">Shop login</a></li>   
-                    <li class="nav-item"><a class="nav-link" href="loginCus.php">Login</a></li> -->
-                               
-                    <li class="dropdown">
+                  <?php if (isset($_SESSION['Name'])) : ?>                                                    
+                    <li class="dropdown">                     
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown">สวัสดีคุณ <?php echo  $_SESSION['Name']; ?></a>
-                      <ul class="dropdown-menu">                   
-                        <li> <a href='cart.php?p_id=$row_pro[p_id]&act=add'>ตะกร้าสินค้า</a> </li>
-                        <li><a href="logout.php">ออกจากระบบ</a></li>
+                      <ul class="dropdown-menu">                     
+                        <li><a href="account.php">My Account</a></li><br>                       
+                        <li><a href="logout.php">Logout</a></li>
                       </ul>
-                    </li>
-                  <?php elseif(isset($_SESSION['OwName'])):?>
-                    <li class="dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown">สวัสดีคุณ <?php echo  $_SESSION['OwName']; ?></a>
-                      <ul class="dropdown-menu">                   
-                        <li> <a href='cart.php?p_id=$row_pro[p_id]&act=add'>ตะกร้าสินค้า</a> </li>
-                        <li><a href="logout.php">ออกจากระบบ</a></li>
-                      </ul>
-                    </li>
+                    </li>               
                   <?php else : ?>
                     <li><a href="loginCus.php">Login</a></li>
-                    <li><a href="loginShop.php">Shop login</a></li>
+                    <li><a href="loginshop.php">Shop login</a></li>
                   <?php endif; ?>
                 </ul>
               </div>
@@ -116,46 +71,16 @@
               <!-- / logo  -->
               <!-- cart box -->
               <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
+                <a class="aa-cart-link" href="cart.php">
                   <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
-                </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.php">Checkout</a>
-                </div>
+                  <span class="aa-cart-title">SHOPPING CART</span>                
+                </a>                
               </div>
               <!-- / cart box -->
               <!-- search box -->
               <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                <form action="index.php" method="GET">
+                  <input type="text"  name="search" id="" placeholder="Search here..." >
                   <button type="submit"><span class="fa fa-search"></span></button>
                 </form>
               </div>
@@ -185,113 +110,11 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="index.php">Home</a></li>
-              <li><a href="#">Men <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>
-                  <li><a href="#">T-Shirts</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Jeans</a></li>
-                  <li><a href="#">Trousers</a></li>
-                  <li><a href="#">And more.. <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Sleep Wear</a></li>
-                      <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Women <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Kurta & Kurti</a></li>
-                  <li><a href="#">Trousers</a></li>
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>
-                  <li><a href="#">Sarees</a></li>
-                  <li><a href="#">Shoes</a></li>
-                  <li><a href="#">And more.. <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Sleep Wear</a></li>
-                      <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>
-                      <li><a href="#">And more.. <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Rings</a></li>
-                          <li><a href="#">Earrings</a></li>
-                          <li><a href="#">Jewellery Sets</a></li>
-                          <li><a href="#">Lockets</a></li>
-                          <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>
-                          <li><a href="#">Jeans</a></li>
-                          <li><a href="#">Polo T-Shirts</a></li>
-                          <li><a href="#">SKirts</a></li>
-                          <li><a href="#">Jackets</a></li>
-                          <li><a href="#">Tops</a></li>
-                          <li><a href="#">Make Up</a></li>
-                          <li><a href="#">Hair Care</a></li>
-                          <li><a href="#">Perfumes</a></li>
-                          <li><a href="#">Skin Care</a></li>
-                          <li><a href="#">Hand Bags</a></li>
-                          <li><a href="#">Single Bags</a></li>
-                          <li><a href="#">Travel Bags</a></li>
-                          <li><a href="#">Wallets & Belts</a></li>
-                          <li><a href="#">Sunglases</a></li>
-                          <li><a href="#">Nail</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Kids <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Casual</a></li>
-                  <li><a href="#">Sports</a></li>
-                  <li><a href="#">Formal</a></li>
-                  <li><a href="#">Standard</a></li>
-                  <li><a href="#">T-Shirts</a></li>
-                  <li><a href="#">Shirts</a></li>
-                  <li><a href="#">Jeans</a></li>
-                  <li><a href="#">Trousers</a></li>
-                  <li><a href="#">And more.. <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Sleep Wear</a></li>
-                      <li><a href="#">Sandals</a></li>
-                      <li><a href="#">Loafers</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Digital <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Camera</a></li>
-                  <li><a href="#">Mobile</a></li>
-                  <li><a href="#">Tablet</a></li>
-                  <li><a href="#">Laptop</a></li>
-                  <li><a href="#">Accesories</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Furniture</a></li>
-              <li><a href="blog-archive.php">Blog <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="blog-archive.php">Blog Style 1</a></li>
-                  <li><a href="blog-archive-2.php">Blog Style 2</a></li>
-                  <li><a href="blog-single.php">Blog Single</a></li>
-                </ul>
-              </li>
-              <li><a href="contact.php">Contact</a></li>
-              <li><a href="#">Pages <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="product.php">Shop Page</a></li>
-                  <li><a href="product-detail.php">Shop Single</a></li>
-                  <li><a href="404.php">404 Page</a></li>
-                </ul>
-              </li>
+             <h4 align="center"> <li ><a >ประสบการณ์การช้อปปิ้งที่ดีที่สุดที่มาซาด้าประเทศไทย มาซาด้า นิยามใหม่ของ “การช้อปที่แสนสะดวก” 👍</a></li></h4>
+             
+              
+              
+             
             </ul>
           </div>
           <!--/.nav-collapse -->

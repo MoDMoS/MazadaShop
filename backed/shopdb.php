@@ -1,9 +1,6 @@
 <?php
-
 session_start();
-
 require 'condb.php';
-
 $errors = array();
 $username = "";
 $email = "";
@@ -37,11 +34,7 @@ if(isset($_POST['loginShop-btn'])){
                 //message
                 $_SESSION['message'] = "You are now logged in!";
                 $_SESSION['alert-class'] = "alert-success";
-<<<<<<< HEAD
-                header('location: s_index.php');
-=======
-                header('location: index.php');
->>>>>>> 3efea3b5bc350acf25cef6ee11362a914eec045f
+                header('location: backed/index.php');
                 exit();
             }
             else{   
@@ -99,7 +92,7 @@ if(isset($_POST['registerShop-btn'])){
             $_SESSION['message'] = "Success";
             $_SESSION['alert-class'] = "alert-success";
 
-            header('location: loginShop.php');
+            header('location: loginshop.php');
             exit();
 
     }

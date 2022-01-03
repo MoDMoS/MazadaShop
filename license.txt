@@ -74,3 +74,6 @@ Google Fonts :
 	Website URL :https://www.google.com/fonts/specimen/Raleway
 	License : SIL Open Font License, version 1.1
 	License URL : http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+NSERT INTO product
+		(ProName,SCatID,Price,Discount,Stock,ProDe,OwID,Picture)VALUES
+		('$ProName','$SCatID','$Price','$Discount','$Stock','$ProDe','$OwID','$newname')";

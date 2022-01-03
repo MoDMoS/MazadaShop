@@ -2,7 +2,7 @@
   require_once 'backed/customerdb.php';
 ?>
 <?php include('h.php'); ?>
-<head><title>Register</title></head>
+<head><title>Edit Profile</title></head>
 
 
 <body>
@@ -33,7 +33,7 @@
         <div class="aa-myaccount-area">         
             <div class="col-sm-6 col-sm-offset-3 form-box">
                 <div class="aa-myaccount-register">                 
-                    <h4 align="center">Register</h4>
+                    <h4 align="center">Edit profile</h4>
                     <form action="" method="post" class="aa-login-form">
                         <?php if(count($errors) > 0): ?>
                             <div class="alert alert-danger">
@@ -42,33 +42,31 @@
                                 <?php endforeach ?>
                             </div>
                         <?php endif; ?>
+                        <label for="">CustomerID : <?php echo $_SESSION['CustomerID']?></label><br>
                         <label for="">Name<span>*</span></label>
-                        <input type="text" name = "name" placeholder="Name">
+                        <input type="text" name = "nameE" value="<?php echo $_SESSION['Name']?>">
                         <label for="">Password<span>*</span></label>
-                        <input type="password" name ="password" placeholder="Password" >
+                        <input type="password" name ="passwordE" value="<?php echo $_SESSION['Password']?>" >
                         <label for="">Confirm password<span>*</span></label>
-                        <input type="password" name = "passwordConf" placeholder="Confirm password" >
+                        <input type="password" name = "passwordConfE" placeholder="Confirm password" >
                         <label for="">Email<span>*</span></label>
-                        <input type="email" name ="email" placeholder="Email">
+                        <input type="email" name ="email" value="<?php echo $_SESSION['Email']?>" hidden>
+                        <input type="email" name ="emailE" value="<?php echo $_SESSION['Email']?>">
                         <label for="">Address<span>*</span></label>
-                        <input type="text" name ="address" placeholder="Address">
+                        <input type="text" name ="addressE" value="<?php echo $_SESSION['Address']?>">
                         <label for="">PostalCode<span>*</span></label>
-                        <input type="number" name ="postalcode" placeholder="PostalCode">
+                        <input type="number" name ="postalcodeE" value="<?php echo $_SESSION['PostalCode']?>">
                         <label for="">Phone<span>*</span></label>
-                        <input type="text" name = "tel" pattern="^[0-9]{6}|[0-9]{8}|[0-9]{10}$" placeholder="Phone">
+                        <input type="text" name = "telE" pattern="^[0-9]{6}|[0-9]{8}|[0-9]{10}$" value="<?php echo $_SESSION['Phone']?>">
                         <div class="row form-group">
                           <label for="date" class="col-sm-3 col-form-label">Date Birth<span>*</span></label>
                           <div class="col-sm-10">
                             <div class="input-group">
-                              <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="date" max="2021-10-19"/>
+                              <input class="form-control" id="date" name="dateE" value="<?php echo $_SESSION['BDay']?>" type="text">
                             </div>
                           </div>
                         </div>
-                        <button type="submit" name="registerCus-btn" class="aa-browse-btn" >Register</button>
-                        <div class="aa-myaccount-register">
-                            <br>
-                            <p class="aa-lost-password">Have a mamber?</p><a href="LoginCus.php"><strong>Login</strong></a>
-                        </div>
+                        <button type="submit" name="edit-btn" class="aa-browse-btn" >Edit</button>
                   </form> 
                 </div>
             </div>
@@ -200,6 +198,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
   <!-- Date picker -->
+  <script>
+    $(document).ready(function(){
+      var date_input=$('input[name="dateE"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      date_input.datepicker({
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      })
+    })
+  </script>
 
   </body>
 </html>
