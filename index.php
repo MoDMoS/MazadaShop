@@ -1,6 +1,12 @@
 <?php include('h.php'); ?>
 <?php include('backed/condb.php'); ?>
 <?php include('backed/customerdb.php'); ?>
+<<<<<<< HEAD
+=======
+<head><title>Mazada Shop</title></head>
+<body>
+<?php include('nav_member.php'); ?>
+>>>>>>> efd6c0683092000131658f30c45ab6e9f10cd7fd
 
 <body>
 <title>Mazada Shop</title>
@@ -74,4 +80,9 @@
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+  </body>
+</html>
+>>>>>>> efd6c0683092000131658f30c45ab6e9f10cd7fd

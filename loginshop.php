@@ -3,7 +3,13 @@
 ?>
 
 <?php include('h.php'); ?>
+<<<<<<< HEAD
 <head><title>Login Shop</title></head>
+=======
+
+<head><title>Login Shop</title></head>
+
+>>>>>>> efd6c0683092000131658f30c45ab6e9f10cd7fd
 <body>
 <?php include('nav_member.php'); ?>
  

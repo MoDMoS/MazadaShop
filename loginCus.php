@@ -4,6 +4,10 @@
 ?>
 
 <?php include('h.php'); ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> efd6c0683092000131658f30c45ab6e9f10cd7fd
 <head><title>Login</title></head>
 
 <body>

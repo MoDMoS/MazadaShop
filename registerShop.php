@@ -2,6 +2,10 @@
   require_once 'backed/shopdb.php';
 ?><?php include('h.php'); ?>
 <head><title>Register Shop</title></head>
+<<<<<<< HEAD
+=======
+
+>>>>>>> efd6c0683092000131658f30c45ab6e9f10cd7fd
 <body>
 <?php include('nav_member.php'); ?> 
   <!-- catg header banner section -->
